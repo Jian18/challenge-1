@@ -1,0 +1,50 @@
+:root {
+	font-size: 16px;
+	--text-primary: #ffffff;
+	--bg-primary: #2b2e4a;
+	--transition-speed: 600ms;
+	margin: 0;
+	padding: 0;
+}
+
+/* scrollbar */
+body::-webkit-scrollbar {
+	width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+	background: #53354a;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: #e84545;
+}
+
+body {
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+}
+
+li > a {
+	color: var(--text-primary);
+}
+
+/* tablet */
+@media only screen and (min-width: 768px) {
+	/* ... */
+}
+
+/* laptop */
+@media only screen and (min-width: 1200px) {
+	/* ... */
+}
+
+/* retina */
+@media only screen and (min-width: 1600px) {
+	/* ... */
+}
+
+/* ----------- Apple Watch ----------- */
+@media (max-device-width: 42mm) and (min-device-width: 38mm) {
+	/* ...  */
+}
