@@ -1,50 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Varta:wght@400;700&display=swap");
+
 :root {
-	font-size: 16px;
+	/* 62.5% is gelijk aan 10px */
+	font-size: 62.5%;
 	--text-primary: #ffffff;
-	--bg-primary: #2b2e4a;
-	--transition-speed: 600ms;
-	margin: 0;
-	padding: 0;
+	--color-primary: #101520;
+	--color-secondary: #485a75;
+	--color-geel: rgb(252, 163, 17);
+	--color-grey: rgb(229, 229, 229);
+	--color-blue: rgb(61, 90, 128);
 }
 
 /* scrollbar */
 body::-webkit-scrollbar {
-	width: 0.25rem;
+	width: 0.4rem;
 }
 
 body::-webkit-scrollbar-track {
-	background: #53354a;
+	background: var(--color-primary);
 }
 
 body::-webkit-scrollbar-thumb {
-	background: #e84545;
+	background: var(--color-secondary);
 }
 
 body {
-	background-color: var(--bg-primary);
 	color: var(--text-primary);
+	background-color: var(--color-primary);
+	margin: 0;
+	padding: 0;
+	font-family: "Varta", sans-serif;
+	font-size: 1.6rem;
 }
 
-li > a {
-	color: var(--text-primary);
+main {
+	margin: 1rem;
+	padding: 1rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
+canvas {
+	background-color: #040b1a;
+	margin: 1rem;
+	border-radius: 10px;
+	-webkit-box-shadow: 3px 3px 5px 6px #040b1a59;
+	-moz-box-shadow: 3px 3px 5px 6px #040b1a59;
+	box-shadow: 3px 3px 5px 6px #040b1a59;
+}
+
+.speed-tijd {
+	border: 3px solid #ffffff;
+	padding: 1.6rem;
+	text-align: center;
+	border-radius: 10px;
+	margin: 2rem;
+}
+
+/* MEDIA QUERIES */
 /* tablet */
 @media only screen and (min-width: 768px) {
-	/* ... */
+	main {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 16px;
+	}
+
+	h1#header-title {
+		display: block;
+	}
 }
 
 /* laptop */
-@media only screen and (min-width: 1200px) {
-	/* ... */
+@media only screen and (min-width: 1024px) {
+	main {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-gap: 20px;
+	}
+
+	canvas {
+		height: 40rem;
+		width: 40rem;
+	}
 }
 
 /* retina */
 @media only screen and (min-width: 1600px) {
 	/* ... */
-}
-
-/* ----------- Apple Watch ----------- */
-@media (max-device-width: 42mm) and (min-device-width: 38mm) {
-	/* ...  */
 }
