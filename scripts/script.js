@@ -55,24 +55,43 @@ var brandstofChart = new Chart(brandstof, {
 
 
 var voorraadChart = new Chart(voorraad, {
-    data: {
-        datasets: [{
-            data: [80, 80, 80]
-        }],
+    type: 'radar',
+    data: {       
         labels: [
-            'oxygen',
-            'food',
-            'water'
-        ],  
-        fill: true,
-        backgroundColor: [
-            'rgb(229, 229, 229)', 
-            'rgb(252, 163, 17)', 
-            'rgb(0, 150, 199)'
-        ],
+        'oxygen',
+        'food',
+        'water'
+    ],   
+        datasets: [
+            {
+            data: [98, 100, 89],
+            label: 'oxygen',
+            backgroundColor: [
+                'rgb(229, 229, 229)', 
+              
+            ],
+
+        },
+        {
+            data: [99, 97, 89],
+            label: 'food',
+            backgroundColor: [
+                'rgb(252, 163, 17)'
           
+            ],
+
+        },
+        {
+            data: [99, 97, 89],
+            label: 'water',
+            backgroundColor: [
+                'rgb(0, 150, 199)'
+            ],
+
+        },
+    ],
+ 
     },
-    type: 'polarArea',
     options:  {
         title: {
             display: true,
