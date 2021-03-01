@@ -6,9 +6,6 @@
 	--text-primary: #ffffff;
 	--color-primary: #1a243b;
 	--color-secondary: #485a75;
-	--color-geel: rgb(252, 163, 17);
-	--color-grey: rgb(229, 229, 229);
-	--color-blue: rgb(61, 90, 128);
 }
 
 /* scrollbar */
@@ -168,14 +165,5 @@ canvas {
 
 	.voorraad {
 		grid-area: voorraad;
-	}
-
-	canvas {
-		height: 20rem;
-		width: 20rem;
-	}
-
-	div {
-		padding: 2.1rem;
 	}
 }
