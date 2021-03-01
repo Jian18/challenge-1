@@ -4,7 +4,7 @@
 	/* 62.5% is gelijk aan 10px */
 	font-size: 62.5%;
 	--text-primary: #ffffff;
-	--color-primary: #101520;
+	--color-primary: #1a243b;
 	--color-secondary: #485a75;
 	--color-geel: rgb(252, 163, 17);
 	--color-grey: rgb(229, 229, 229);
@@ -61,16 +61,41 @@ canvas {
 }
 
 /* MEDIA QUERIES */
+
 /* tablet */
 @media only screen and (min-width: 768px) {
 	main {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto;
 		grid-gap: 16px;
+
+		grid-template-areas:
+			" title title"
+			"brandstof speed-tijd"
+			"afstand-tijd voorraad";
 	}
 
 	h1#header-title {
-		display: block;
+		align-items: center;
+		text-align: center;
+		grid-area: title;
+	}
+
+	.afstand-tijd {
+		grid-area: afstand-tijd;
+	}
+
+	.speed-tijd {
+		grid-area: speed-tijd;
+	}
+
+	.brandstof {
+		grid-area: brandstof;
+	}
+
+	.voorraad {
+		grid-area: voorraad;
 	}
 }
 
@@ -78,17 +103,79 @@ canvas {
 @media only screen and (min-width: 1024px) {
 	main {
 		display: grid;
-		grid-template-columns: repeat(12, 1fr);
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: 20% 50% 30%;
 		grid-gap: 20px;
+
+		grid-template-areas:
+			" title title title title title title"
+			" speed-tijd speed-tijd afstand-tijd afstand-tijd voorraad voorraad "
+			" . brandstof brandstof brandstof brandstof .";
+	}
+
+	.afstand-tijd {
+		grid-area: afstand-tijd;
+	}
+
+	.speed-tijd {
+		grid-area: speed-tijd;
+	}
+
+	.brandstof {
+		grid-area: brandstof;
+	}
+
+	.voorraad {
+		grid-area: voorraad;
 	}
 
 	canvas {
-		height: 40rem;
-		width: 40rem;
+		height: 20rem;
+		width: 20rem;
+	}
+
+	div {
+		padding: 2.1rem;
 	}
 }
 
-/* retina */
-@media only screen and (min-width: 1600px) {
-	/* ... */
+/* large screen */
+@media only screen and (min-width: 1440px) {
+	main {
+		display: grid;
+		grid-template-columns: repeat(8, 1fr);
+		grid-template-rows: auto;
+		grid-gap: 20px;
+		grid-template-areas:
+			" title title title title title title title title"
+			". . . speed-tijd speed-tijd . . ."
+			". . afstand-tijd afstand-tijd voorraad voorraad . ."
+			". .  brandstof brandstof brandstof brandstof . . ";
+		height: 100vh;
+	}
+
+	.afstand-tijd {
+		grid-area: afstand-tijd;
+	}
+
+	.speed-tijd {
+		grid-area: speed-tijd;
+	}
+
+	.brandstof {
+		grid-area: brandstof;
+	}
+
+	.voorraad {
+		grid-area: voorraad;
+	}
+
+	canvas {
+		height: 20rem;
+		width: 20rem;
+	}
+
+	div {
+		padding: 2.1rem;
+	}
 }
